@@ -1,0 +1,2 @@
+# loja-generica
+Loja Genérica
