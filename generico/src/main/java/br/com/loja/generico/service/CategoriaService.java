@@ -33,7 +33,7 @@ public class CategoriaService {
 	
 	public List<Categoria> obterPorNome(String nome) {
 		List<Categoria> categorias = new ArrayList<Categoria>();
-		repository.findByNomeContaining(nome).forEach(categorias::add);
+		repository.findByNomeContainingIgnoreCase(nome).forEach(categorias::add);
 		return categorias;
 
 	}

@@ -1,0 +1,40 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h2>Categorias</h2>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Busca por nome" [(ngModel)]="nome" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" (click)="buscaPorNome()">
+          Pesquisar
+        </button>
+      </div>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let categoria of categorias of sortBy 'nome'">
+          <td>{{ categoria.id }}</td>
+          <td>{{ categoria.nome }}</td>
+          <td>{{ categoria.descricao }}</td>
+          <td>
+            <button class="btn btn-warning" (click)="editarCategoria(categoria)">
+              Editar
+            </button>
+
+            <button class="btn btn-danger" (click)="excluirCategoria(categoria)">
+              Excluir
+            </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -10,6 +10,6 @@ import br.com.loja.generico.modelo.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-	List<Categoria> findByNomeContaining(String nome);
+	List<Categoria> findByNomeContainingIgnoreCase(String nome);
 
 }

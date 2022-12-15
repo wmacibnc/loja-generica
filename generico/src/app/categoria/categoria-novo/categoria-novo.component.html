@@ -1,0 +1,39 @@
+<div class="card my-5">
+  <div class="card-body">
+    <h2> {{ acao }} Categoria </h2>
+    <form>
+      <div>
+        <div class="submit-form">
+          <div *ngIf="!submitted">
+
+            <div class="form-group">
+              <label for="nome">Nome: </label>
+              <input type="text" class="form-control" id="nome" required [(ngModel)]="categoria.nome" maxlength="255"
+                name="nome" aria-describedby="nomeHelp" placeholder="Entre com o nome da categoria">
+              <small id="nomeHelp" class="form-text text-muted">Informe um nome para a categoria.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="descricao">Descrição: </label>
+              <input type="text" class="form-control" id="descricao" required [(ngModel)]="categoria.descricao"
+                maxlength="255" name="descricao" placeholder="Informe a descrição da categoria">
+            </div>
+            <button (click)="salvar()" class="btn btn-success">
+              <span *ngIf="acao === 'Nova'">
+                Salvar
+              </span>
+              <span *ngIf="acao === 'Editar'">
+                Editar
+              </span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Categoria foi salva com sucesso!</h4>
+        <button class="btn btn-success" (click)="novaCategoria()">Adicionar</button>
+      </div>
+    </form>
+  </div>
+</div>

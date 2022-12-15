@@ -71,16 +71,6 @@ public class CategoriaController {
 		}
 	}
 
-	@PutMapping("/atualizar")
-	public ResponseEntity<Categoria> atualizar(@RequestBody Categoria categoria) {
-		Categoria data = service.atualizar(categoria);
-		if (data != null) {
-			return new ResponseEntity<>(data, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
-
 	@DeleteMapping("/remover/{id}")
 	public ResponseEntity<HttpStatus> remover(@PathVariable("id") Long id) {
 		try {
