@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { CategoriaService } from './categoria/categoria.service';
 import { CategoriaListaComponent } from './categoria/categoria-lista/categoria-lista.component';
 import { CategoriaNovoComponent } from './categoria/categoria-novo/categoria-novo.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoriaListaComponent,
-    CategoriaNovoComponent
+    CategoriaNovoComponent,
+    HomeComponent
   ],
 
   imports: [

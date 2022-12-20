@@ -1,27 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Bem vindo a {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="/assets/logo.png">
-</div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/categoria" class="btn btn-info">Categoria</a>
-            </li>
-            <li class="list-inline-item">
-              <a routerLink="/categoria-novo" class="btn btn-info">Adicionar Categoria</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <router-outlet></router-outlet>
     </div>
   </div>

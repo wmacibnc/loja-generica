@@ -1,3 +1,16 @@
+<div *ngIf="submitted">
+  <div class="alert alert-success" role="alert">
+    Categoria foi
+    <span *ngIf="acao === 'Nova'">
+      salva
+    </span>
+    <span *ngIf="acao === 'Editar'">
+      editada
+    </span>
+    com sucesso!
+  </div>
+</div>
+
 <div class="card my-5">
   <div class="card-body">
     <h2> {{ acao }} Categoria </h2>
@@ -27,12 +40,17 @@
               </span>
             </button>
 
+            <button routerLink="/categoria" class="btn btn-warning">Cancelar</button>
+
+            <span *ngIf="acao === 'Nova'">
+              <button type="reset" class="btn btn-danger">Limpar</button>
+            </span>
+
           </div>
         </div>
       </div>
       <div *ngIf="submitted">
-        <h4>Categoria foi salva com sucesso!</h4>
-        <button class="btn btn-success" (click)="novaCategoria()">Adicionar</button>
+        <button routerLink="/categoria" class="btn btn-info">Listar</button>
       </div>
     </form>
   </div>

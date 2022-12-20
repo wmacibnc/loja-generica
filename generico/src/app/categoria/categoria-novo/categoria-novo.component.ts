@@ -44,14 +44,6 @@ export class CategoriaNovoComponent implements OnInit {
       });
   }
 
-  novaCategoria(): void {
-    this.submitted = false;
-    this.categoria = {
-      id: null,
-      nome: '',
-      descricao: ''
-    };
-  }
 
   ngOnInit() {
     const edicao = this.activatedRoute.snapshot.paramMap.has('id');

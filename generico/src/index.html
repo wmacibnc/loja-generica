@@ -24,10 +24,38 @@
     <div class="border-end bg-white" id="sidebar-wrapper">
       <div class="sidebar-heading border-bottom bg-light">Cadastros básicos</div>
       <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/categoria">Categoria</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Produto</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Loja</a>
-        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Usuários</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Categoria</a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/categoria">Listar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/categoria-novo">Adicionar</a>
+        </div>
+
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Produto</a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/produto">Listar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/produto-novo">Adicionar</a>
+        </div>
+
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Loja</a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/loja">Listar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/loja-novo">Adicionar</a>
+        </div>
+
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Usuarios</a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/usuario">Listar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/usuario-novo">Adicionar</a>
+        </div>
+
       </div>
     </div>
     <!-- Page content wrapper-->
@@ -41,16 +69,16 @@
             aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-              <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+              <li class="nav-item active"><a class="nav-link" href="#!">Página Inicial</a></li>
+              <li class="nav-item"><a id="data-hora" class="nav-link" href="#!">
+                </a></li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  aria-haspopup="true" aria-expanded="false">Entrar</a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#!">Action</a>
-                  <a class="dropdown-item" href="#!">Another action</a>
+                  <a class="dropdown-item" href="#!">Login</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#!">Something else here</a>
+                  <a class="dropdown-item" href="#!">Cadastre-se</a>
                 </div>
               </li>
             </ul>
@@ -68,3 +96,11 @@
 </body>
 
 </html>
+<script>
+  var data = new Date();
+  var dias = new Array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
+  var monName = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro');
+  var hoje = data.getDate() + " de " + monName[data.getMonth()] + " de " + data.getFullYear();
+
+  document.getElementById('data-hora').innerHTML = dias[data.getDay()] + ", " + hoje;
+</script>
